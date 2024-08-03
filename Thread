@@ -1,0 +1,20 @@
+import java.util.Scanner;
+class learnit implements Runnable {
+   int fact=1;
+    @Override
+    public void run() {
+       Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        for(int i=1;i<=n;i++){
+           fact*=i;
+           }
+      System.out.println(fact);
+    }
+}
+class threadexam{
+public static void main(String[] args){
+	learnit Inst = new learnit();
+        Thread thinst = new Thread(Inst);
+	thinst.start();
+   }
+}
